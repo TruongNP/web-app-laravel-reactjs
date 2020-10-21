@@ -1,0 +1,20 @@
+.bg-primary {
+    background-color: $primary;
+}
+
+.menu-item {
+    &:hover {
+        .collapsible-body {
+            display: block;
+        }
+    }
+}
+
+.form-check-input[type=checkbox].filled-in:checked+label:after, label.btn input[type=checkbox].filled-in:checked+label:after {
+    background-color: $primary;
+    border-color: $primary;
+}
+
+.main {
+    padding-left: 15rem;
+}
