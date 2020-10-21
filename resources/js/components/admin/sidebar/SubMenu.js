@@ -3,7 +3,7 @@ import React from 'react';
 function SubMenu(prop) {
     const subMenu = prop.subMenu;
     const prefix = prop.prefix;
-    console.log(subMenu);
+    
     return (
         <div className="collapsible-body">
             <ul className="list-unstyled">

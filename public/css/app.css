@@ -10917,3 +10917,9 @@ label.btn input[type=checkbox].filled-in:checked + label:after {
   padding-left: 15rem;
 }
 
+th,
+td {
+  text-transform: capitalize;
+  text-align: center;
+}
+
