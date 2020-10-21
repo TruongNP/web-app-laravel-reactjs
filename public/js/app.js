@@ -66036,31 +66036,55 @@ function Header() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _data_admin_products__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../data/admin/products */ "./resources/js/data/admin/products.js");
+
 
 
 function MainContent() {
+  var prefixAdmin = '/admin/product';
+  var productList = _data_admin_products__WEBPACK_IMPORTED_MODULE_1__["Products"].filter(function (p) {
+    return p.available == true;
+  });
+  console.log('productList:', productList);
+
+  var categoryProduct = function categoryProduct(tags) {
+    var tag = tags.filter(function (t) {
+      return t.startsWith('category:');
+    });
+    var catName = tag[0].replace('category:', '');
+    return catName;
+  };
+
+  var deleteProduct = function deleteProduct(id) {
+    console.log('id:', id);
+  };
+
+  var updateProduct = function updateProduct(id) {
+    console.log('id:', id);
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
     className: "main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container-fluid pt-5 pl-5 pb-5 pr-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    "class": "h3 mb-2 text-gray-800"
+    className: "h3 mb-2 text-gray-800"
   }, "Products"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-12 mb-3 p-0 d-flex justify-content-between"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-    "class": "nav"
+    className: "nav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    "class": "nav-link active",
+    className: "nav-link active",
     href: "#"
   }, "Export"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    "class": "nav-link",
+    className: "nav-link",
     href: "#"
   }, "Import"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    "class": "nav-link",
+    className: "nav-link",
     href: "#"
   }, "More Action")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/admin/product/add",
-    "class": "btn btn-primary bg-primary"
+    className: "btn btn-primary bg-primary"
   }, "Add New")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "table-responsive text-nowrap"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
@@ -66072,81 +66096,61 @@ function MainContent() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "checkbox",
     className: "form-check-input filled-in",
-    id: "check-all",
-    checked: true
+    id: "check-all"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     className: "form-check-label small text-uppercase card-link-secondary",
-    "for": "check-all"
+    htmlFor: "check-all"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     scope: "col"
-  }, "Heading"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+  }, "Image"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     scope: "col"
-  }, "Heading"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+  }, "Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     scope: "col"
-  }, "Heading"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+  }, "Price"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     scope: "col"
-  }, "Heading"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+  }, "Available"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     scope: "col"
-  }, "Heading"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+  }, "Quantity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     scope: "col"
-  }, "Heading"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+  }, "Category"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     scope: "col"
-  }, "Heading"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "col"
-  }, "Heading"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "col"
-  }, "Action"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-check pl-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "checkbox",
-    className: "form-check-input filled-in",
-    id: "check-1"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    className: "form-check-label small text-uppercase card-link-secondary",
-    "for": "check-1"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "button",
-    className: "btn btn-dark-green bg-danger btn-sm m-0 py-1 px-2 mr-1 text-light"
-  }, "Delete"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "button",
-    className: "btn btn-primary btn-sm m-0 py-1 px-2 text-light"
-  }, "Edit"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-check pl-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "checkbox",
-    className: "form-check-input filled-in",
-    id: "check-2"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    className: "form-check-label small text-uppercase card-link-secondary",
-    "for": "check-2"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "button",
-    className: "btn btn-dark-green bg-danger btn-sm m-0 py-1 px-2 mr-1 text-light"
-  }, "Delete"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "button",
-    className: "btn btn-primary btn-sm m-0 py-1 px-2 text-light"
-  }, "Edit"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    scope: "row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-check pl-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "checkbox",
-    className: "form-check-input filled-in",
-    id: "check-3"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-    className: "form-check-label small text-uppercase card-link-secondary",
-    "for": "check-3"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cell"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "button",
-    className: "btn btn-dark-green bg-danger btn-sm m-0 py-1 px-2 mr-1 text-light"
-  }, "Delete"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "button",
-    className: "btn btn-primary btn-sm m-0 py-1 px-2 text-light"
-  }, "Edit"))))))));
+  }, "Action"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, productList.map(function (item, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      key: index
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+      scope: "row"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "form-check pl-0"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      type: "checkbox",
+      className: "form-check-input filled-in",
+      id: "check-1"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      className: "form-check-label small text-uppercase card-link-secondary",
+      htmlFor: "check-1"
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: "".concat(prefixAdmin, "/").concat(item.handle)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: item.feature_image,
+      width: "50",
+      alt: item.title
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: "".concat(prefixAdmin, "/").concat(item.handle),
+      className: "nav-link"
+    }, item.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.available == true ? 'Instock' : 'Outstock'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, item.inventory_quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, categoryProduct(item.tags)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      className: "btn btn-dark-green bg-danger btn-sm m-0 py-1 px-2 mr-1 text-light",
+      onClick: function onClick() {
+        deleteProduct(item.id);
+      }
+    }, "Delete"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      type: "button",
+      className: "btn btn-primary btn-sm m-0 py-1 px-2 text-light",
+      onClick: function onClick() {
+        updateProduct(item.id);
+      }
+    }, "Edit")));
+  }))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (MainContent);
@@ -66196,7 +66200,6 @@ __webpack_require__.r(__webpack_exports__);
 function SubMenu(prop) {
   var subMenu = prop.subMenu;
   var prefix = prop.prefix;
-  console.log(subMenu);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "collapsible-body"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -66324,6 +66327,104 @@ var Menu = [{
     name: 'Tags',
     slug: 'tags'
   }]
+}];
+
+/***/ }),
+
+/***/ "./resources/js/data/admin/products.js":
+/*!*********************************************!*\
+  !*** ./resources/js/data/admin/products.js ***!
+  \*********************************************/
+/*! exports provided: Products */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Products", function() { return Products; });
+var Products = [{
+  available: true,
+  id: 1,
+  handle: 'product-1',
+  title: 'Product 1',
+  feature_image: '/uploads/product-demo.jpg',
+  images_info: [{
+    src: '/uploads/product-demo.jpg'
+  }, {
+    src: '/uploads/product-demo.jpg'
+  }, {
+    src: '/uploads/product-demo.jpg'
+  }],
+  options_with_values: [{
+    name: 'Color',
+    position: 1,
+    selected_value: 'Toffee/Rose Gold',
+    values: [{
+      image: '',
+      color_code: '#bd8f67',
+      title: 'Toffee/Rose Gold'
+    }, {
+      image: '',
+      color_code: '#000',
+      title: 'Black/Gold'
+    }]
+  }, {
+    name: 'Size',
+    position: 2,
+    selected_value: 'XS',
+    values: [{
+      title: 'XS'
+    }, {
+      title: 'S'
+    }, {
+      title: 'M'
+    }]
+  }],
+  tags: ['category:tops', 'col:new-arrivals'],
+  price: 25000,
+  compare_at_price: 25000,
+  inventory_quantity: 10
+}, {
+  available: true,
+  id: 2,
+  handle: 'product-1',
+  title: 'Product 1',
+  feature_image: '/uploads/product-demo.jpg',
+  images_info: [{
+    src: '/uploads/product-demo.jpg'
+  }, {
+    src: '/uploads/product-demo.jpg'
+  }, {
+    src: '/uploads/product-demo.jpg'
+  }],
+  options_with_values: [{
+    name: 'Color',
+    position: 1,
+    selected_value: 'Toffee/Rose Gold',
+    values: [{
+      image: '',
+      color_code: '#bd8f67',
+      title: 'Toffee/Rose Gold'
+    }, {
+      image: '',
+      color_code: '#000',
+      title: 'Black/Gold'
+    }]
+  }, {
+    name: 'Size',
+    position: 2,
+    selected_value: 'XS',
+    values: [{
+      title: 'XS'
+    }, {
+      title: 'S'
+    }, {
+      title: 'M'
+    }]
+  }],
+  tags: ['category:tops', 'col:new-arrivals'],
+  price: 25000,
+  compare_at_price: 25000,
+  inventory_quantity: 10
 }];
 
 /***/ }),
