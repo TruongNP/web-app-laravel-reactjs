@@ -1,7 +1,8 @@
 import React from 'react';
 import { Products } from '../../../../data/admin/products';
+import { Link } from "react-router-dom";
 
-function MainContent() {
+function MainPage() {
 
     const prefixAdmin = '/admin/product';
     
@@ -65,15 +66,15 @@ function MainContent() {
                                             <label className="form-check-label small text-uppercase card-link-secondary" htmlFor="check-1"></label>
                                             </div>
                                         </th> 
-                                        <td><a href={`${prefixAdmin}/${item.handle}`}><img src={item.feature_image} width="50" alt={item.title} /></a></td>
-                                        <td><a href={`${prefixAdmin}/${item.handle}`} className="nav-link">{item.title}</a></td>
+                                        <td><Link to={`${prefixAdmin}/edit/${item.id}`}><img src={item.feature_image} width="50" alt={item.title} /></Link></td>
+                                        <td><Link to={`${prefixAdmin}/edit/${item.id}`} className="text-primary">{item.title}</Link></td>
                                         <td>{item.price}</td>
-                                        <td>{item.available == true ? 'Instock' : 'Outstock'}</td>
+                                        <td className="text-primary">{item.available == true ? 'Instock' : 'Outstock'}</td>
                                         <td>{item.inventory_quantity}</td>
                                         <td>{categoryProduct(item.tags)}</td>
                                         <td>
-                                            <button type="button" className="btn btn-dark-green bg-danger btn-sm m-0 py-1 px-2 mr-1 text-light" onClick={() => {deleteProduct(item.id)}} >Delete</button>
-                                            <button type="button" className="btn btn-primary btn-sm m-0 py-1 px-2 text-light" onClick={() => {updateProduct(item.id)}} >Edit</button>
+                                            <Link className="btn btn-dark-green bg-danger btn-sm m-0 py-1 px-2 mr-1 text-light" onClick={() => {deleteProduct(item.id)}} >Delete</Link>
+                                            <Link to={`${prefixAdmin}/edit/${item.id}`} className="btn btn-primary btn-sm m-0 py-1 px-2 text-light" >Edit</Link>
                                         </td>
                                     </tr>
                                     )
@@ -87,4 +88,4 @@ function MainContent() {
     )
 }
 
-export default MainContent;
+export default MainPage;

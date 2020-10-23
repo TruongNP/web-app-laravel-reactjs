@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { Link } from "react-router-dom";
 
 function SubMenu(prop) {
     const subMenu = prop.subMenu;
@@ -10,7 +11,7 @@ function SubMenu(prop) {
             {
                 subMenu.map( (item, key) => (
                     <li key={key}>
-                        <a href={`${prefix}/${item.slug}`} className="waves-effect">{item.name}</a>
+                        <Link to={`${prefix}/${item.slug}`} className="waves-effect">{item.name}</Link>
                     </li>
                 ))
             }
